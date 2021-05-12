@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/repositoriesFragment">
+
+    <fragment
+        android:id="@+id/repositoriesFragment"
+        android:name="eas.api_github_android.presentation.repositories.RepositoriesFragment"
+        android:label="repositories_fragment"
+        tools:layout="@layout/repositories_fragment">
+        <action
+            android:id="@+id/actionRepositoriesFragmentToRepositoryDescriptionFragment"
+            app:destination="@id/repositoryDescriptionFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/repositoryDescriptionFragment"
+        android:name="eas.api_github_android.presentation.repositories.repository.RepositoryDescriptionFragment"
+        android:label="fragment_repository_description"
+        tools:layout="@layout/fragment_repository_description">
+        <action
+            android:id="@+id/actionRepositoryDescriptionFragmentToRepositoriesFragment"
+            app:destination="@id/repositoriesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>
