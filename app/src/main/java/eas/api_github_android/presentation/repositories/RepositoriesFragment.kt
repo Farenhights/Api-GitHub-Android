@@ -23,6 +23,7 @@ class RepositoriesFragment : Fragment() {
         textViewRepositories.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.actionRepositoriesFragmentToRepositoryDescriptionFragment)
+
         }
     }
 }
