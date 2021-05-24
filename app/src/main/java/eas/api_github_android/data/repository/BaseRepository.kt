@@ -1,4 +1,4 @@
-package eas.api_github_android.data
+package eas.api_github_android.data.repository
 
 import eas.api_github_android.network.RetrofitBuilder
 import org.koin.core.component.KoinComponent
