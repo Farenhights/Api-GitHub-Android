@@ -20,7 +20,7 @@ class RepositoriesAdapter(
         val inflater = LayoutInflater.from(parent.context)
         binding = ItemRepositoryBinding.inflate(inflater)
 
-        return RepositoryViewHolder()
+        return RepositoryViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: RepositoryViewHolder, position: Int) {
@@ -31,7 +31,7 @@ class RepositoriesAdapter(
         return repositories.size
     }
 
-    inner class RepositoryViewHolder() :
+    inner class RepositoryViewHolder(private val binding: ItemRepositoryBinding) :
         RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         fun bindItems(items: ItemsItem) {
