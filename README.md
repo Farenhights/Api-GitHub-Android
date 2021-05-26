@@ -8,7 +8,7 @@ The idea is consult [API from GitHub](https://developer.github.com/v3/) and get 
 
 ### **Technologies Used** ###
 
-- __MVVM Archterure with Clean__. 
+- __MVVM Architecture with Clean__. 
 - __Kotlin__. 
 - __Koin__.
 - __Coroutines__. 
