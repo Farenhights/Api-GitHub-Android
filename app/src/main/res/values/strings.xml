@@ -8,4 +8,7 @@
     <string name="error_generic">Ocorreu algo inesperado, tente novamente mais tarde.</string>
     <string name="no_connection">Por favor, verifique sua conexão com a internet</string>
     <string name="error_timeout">Não foi possível completar esta requisição, tente novamente mais tarde</string>
+
+    <!-- Repositories Fragment -->
+    <string name="github_toolbar_title">Github JavaPop</string>
 </resources>

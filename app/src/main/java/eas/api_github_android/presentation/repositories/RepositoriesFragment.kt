@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import eas.api_github_android.data.model.repositories.common.ItemsItem
@@ -36,7 +37,6 @@ class RepositoriesFragment : Fragment() {
     }
 
     private fun initUi() {
-        activity
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
     }
 
@@ -46,11 +46,20 @@ class RepositoriesFragment : Fragment() {
 
     private fun initObservers() {
 
+        viewModel.loadingStateLiveData.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.GONE
+            }
+        })
+
         viewModel.repositoriesLiveData.observeResourceResponse(this,
             onSuccess = { status ->
                 if (status.data != null) {
                     repositories = status.data.items
-                    binding.recyclerView.adapter = RepositoriesAdapter(status.data.items, onClickItemProduct())
+                    binding.recyclerView.adapter =
+                        RepositoriesAdapter(status.data.items, onClickItemProduct())
                 }
             }, onError = {
                 if (it.message != -1) {
