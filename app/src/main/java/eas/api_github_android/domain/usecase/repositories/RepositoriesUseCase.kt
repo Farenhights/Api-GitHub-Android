@@ -12,8 +12,7 @@ interface RepositoriesUseCase {
 }
 
 class RepositoriesUseCaseImpl(
-    private val repository: GitHubRepository,
-    private val mapper: RepositoriesMapper
+    private val repository: GitHubRepository
 ) : RepositoriesUseCase {
     override suspend fun invoke() = withContext(IO) {
         repository.getRepositories()

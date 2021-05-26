@@ -9,7 +9,7 @@ object GitHubRepository : BaseRepository() {
 
     @WorkerThread
     suspend fun getRepositories(): Resource<RepositoriesResponse> = builder.networkCall {
-        builder.build().getRepositories().await()
+        builder.build().getRepositories()
     }
 
 }

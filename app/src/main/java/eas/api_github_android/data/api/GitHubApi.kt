@@ -13,11 +13,11 @@ import retrofit2.Response
 interface GitHubApi {
 
     @GET("search/repositories?q=language:Java&sort=stars&page=1")
-    suspend fun getRepositories(): Deferred<Response<RepositoriesResponse>>
+    suspend fun getRepositories(): Response<RepositoriesResponse>
 
     @GET("repos/{criador}/{repositorio}/pulls")
     suspend fun getPullRequests(
         @Path("criador") creator: String,
         @Path("repositorio") repository: String
-    ): Deferred<Response<List<PullRequestsResponse>>>
+    ): Response<List<PullRequestsResponse>>
 }

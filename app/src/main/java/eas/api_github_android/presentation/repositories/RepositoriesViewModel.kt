@@ -17,7 +17,7 @@ class RepositoriesViewModel(
     fun getRepositories() {
 //        loadingStateLiveData.postValue(true)
         viewModelScope.launch {
-            repositoriesLiveData.postValue(repositoriesUseCase()!!)
+            repositoriesLiveData.postValue(repositoriesUseCase.invoke())
         }
     }
 }
