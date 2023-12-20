@@ -8,19 +8,17 @@ The idea is consult [API from GitHub](https://developer.github.com/v3/) and get 
 
 ### **Technologies Used** ###
 
-- __MVVM Architecture with Clean__. 
+- __MVVM Architecture + Clean__. 
 - __Kotlin__. 
 - __Koin__.
 - __Coroutines__. 
 - __Android Navigation__. 
 - __Android Compose__.
 - __Live Data__. 
-- __Koin__. 
-- __Retrofit__.
+- __Retrofit 2__.
 - __Gson__.
 - __Lottie__. 
 - __Crashlytics__. 
-- __Retrofit__. 
 - __Picasso__. 
 - __Pagination__.
 - __Modularization__.
