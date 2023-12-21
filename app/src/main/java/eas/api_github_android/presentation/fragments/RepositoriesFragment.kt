@@ -1,4 +1,4 @@
-package eas.api_github_android.presentation.repositories
+package eas.api_github_android.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,8 @@ import com.google.android.material.snackbar.Snackbar
 import eas.api_github_android.data.model.repositories.common.ItemsItem
 import eas.api_github_android.databinding.FragmentRepositoriesBinding
 import eas.api_github_android.extension.observeResourceResponse
+import eas.api_github_android.presentation.ui.RepositoriesAdapter
+import eas.api_github_android.presentation.ui.viewmodel.RepositoriesViewModel
 import org.koin.android.ext.android.inject
 
 class RepositoriesFragment : Fragment() {

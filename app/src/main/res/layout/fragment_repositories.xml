@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="eas.api_github_android.presentation.repositories.RepositoriesViewModel" />
+            type="eas.api_github_android.presentation.ui.viewmodel.RepositoriesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/repositoriesFragment"
-        android:name="eas.api_github_android.presentation.repositories.RepositoriesFragment"
+        android:name="eas.api_github_android.presentation.fragments.RepositoriesFragment"
         android:label="repositories_fragment"
         tools:layout="@layout/fragment_repositories">
     </fragment>

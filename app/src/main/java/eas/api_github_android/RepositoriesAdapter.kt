@@ -1,11 +1,9 @@
-package eas.api_github_android.presentation.repositories
+package eas.api_github_android.presentation.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
-import eas.api_github_android.R
 import eas.api_github_android.data.model.repositories.common.ItemsItem
 import eas.api_github_android.databinding.ItemRepositoryBinding
 
@@ -36,7 +34,7 @@ class RepositoriesAdapter(
 
         fun bindItems(items: ItemsItem) {
             with(binding) {
-                repositoryNameTextView.text = items.name
+               /* repositoryNameTextView.text = items.name
                 repositoryDescriptionTextView.text = items.description
                 forkCountTextView.text = items.forks_count.toString()
                 starCountTextView.text = items.stargazers_count.toString()
@@ -48,7 +46,12 @@ class RepositoriesAdapter(
                     .error(R.drawable.ic_person)
                     .resize(50, 50)
                     .centerCrop()
-                    .into(avatarImage)
+                    .into(avatarImage)*/
+                /*composeView.setContent {
+                    MaterialTheme {
+//                        ItemRepository()
+                    }
+                }*/
             }
 
             binding.root.setOnClickListener(this)

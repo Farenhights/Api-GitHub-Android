@@ -1,4 +1,4 @@
-package eas.api_github_android.presentation.base
+package eas.api_github_android.presentation.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
