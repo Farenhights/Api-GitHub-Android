@@ -27,6 +27,15 @@ fun RepositoriesScreen(/*navController: NavController*/) {
             starCount = 50,
             avatarResId = R.drawable.ic_person
         )
+
+        RepositoryItem(
+            repositoryName = "My Awesome Repo",
+            repositoryDescription = "This is a description of my repository.",
+            username = "john_doe",
+            forkCount = 100,
+            starCount = 50,
+            avatarResId = R.drawable.ic_person // Replace with your actual avatar resource ID
+        )
     }
 }
 
