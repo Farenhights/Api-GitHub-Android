@@ -48,15 +48,15 @@ class RepositoriesFragment : Fragment() {
 
     private fun initObservers() {
 
-        viewModel.loadingStateLiveData.observe(viewLifecycleOwner, Observer {
+        /*viewModel.loadingStateLiveData.observe(viewLifecycleOwner, Observer {
             if (it) {
                 binding.progressBar.visibility = View.VISIBLE
             } else {
                 binding.progressBar.visibility = View.GONE
             }
-        })
+        })*/
 
-        viewModel.repositoriesLiveData.observeResourceResponse(this,
+        /*viewModel.repositoriesLiveData.observeResourceResponse(this,
             onSuccess = { status ->
                 if (status.data != null) {
                     repositories = status.data.items
@@ -67,7 +67,7 @@ class RepositoriesFragment : Fragment() {
                 if (it.message != -1) {
                     Snackbar.make(binding.rootLayout, it.message, Snackbar.LENGTH_SHORT).show()
                 }
-            })
+            })*/
     }
 
     private fun onClickItemProduct(): RepositoriesAdapter.CallbackClick {

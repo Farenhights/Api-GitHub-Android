@@ -8,7 +8,6 @@ import eas.api_github_android.network.RetrofitBuilder
 import eas.api_github_android.network.statushandler.Resource
 import javax.inject.Inject
 
-@ViewModelScoped
 class GitHubRepository @Inject constructor(
     private val builder: RetrofitBuilder
 ) {
