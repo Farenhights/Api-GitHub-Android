@@ -11,7 +11,7 @@ fun AppNavigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = AppScreens.RepositoryScreen.route) {
         composable(route = AppScreens.RepositoryScreen.route) {
-            RepositoriesScreen()
+//            RepositoriesScreen()
         }
        /* composable(route = AppScreens.ItemRepositoryScreen.route) {
             ItemRepositoryScreen()

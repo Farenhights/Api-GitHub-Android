@@ -4,11 +4,12 @@ import RepositoriesScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import eas.api_github_android.application.App
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -23,7 +24,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun App() {
     MaterialTheme {
-        RepositoriesScreen()
+        val navController = rememberNavController()
+        RepositoriesScreen(navController)
     }
 }
 
