@@ -1,6 +1,6 @@
 package eas.api_github_android.presentation.ui.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import eas.api_github_android.domain.usecase.repositories.RepositoriesUseCase
@@ -13,18 +13,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RepositoriesViewModel @Inject constructor(
+    application: Application,
     private val repositoriesUseCase: RepositoriesUseCase
-) : ViewModel() {
+) : BaseViewModel(application) {
 
     private val _uiRepositoriesState = MutableStateFlow(RepositoriesState())
     val uiRepositoriesState: StateFlow<RepositoriesState> = _uiRepositoriesState.asStateFlow()
 
     fun getRepositories() {
         viewModelScope.launch {
-            // Atualiza o estado para indicar que a requisição está em andamento
             _uiRepositoriesState.value = _uiRepositoriesState.value.copy(isLoading = true)
 
-            // Realiza a requisição e atualiza o estado com base no resultado
             val result = repositoriesUseCase.invoke()
             _uiRepositoriesState.value = _uiRepositoriesState.value.copy(
                 isLoading = false,

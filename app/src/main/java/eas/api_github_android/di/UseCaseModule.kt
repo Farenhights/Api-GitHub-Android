@@ -14,7 +14,6 @@ import javax.inject.Singleton
 object UseCaseModule {
 
     @Provides
-//    @Singleton
     fun provideRepositoriesUseCase(repository: GitHubRepository): RepositoriesUseCase {
         return RepositoriesUseCaseImpl(repository)
     }
