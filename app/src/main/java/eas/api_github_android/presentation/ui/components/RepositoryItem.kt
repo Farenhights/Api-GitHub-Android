@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import eas.api_github_android.R
 import eas.api_github_android.data.model.repositories.common.ItemsItem
+import eas.api_github_android.presentation.ui.navigation.Destinations
 
 @Composable
 fun RepositoryItem(
@@ -35,7 +36,7 @@ fun RepositoryItem(
             .fillMaxWidth()
             .padding(16.dp)
             .clickable {
-                navController?.navigate("repositoryDetailScreen/$repositoryName/$repositoryDescription/$username/$forkCount/$starCount")
+                navController?.navigate("${Destinations.REPOSITORY_DETAIL_SCREEN}/$repositoryName/$repositoryDescription/$username/$forkCount/$starCount")
             }
     ) {
         // Avatar Image

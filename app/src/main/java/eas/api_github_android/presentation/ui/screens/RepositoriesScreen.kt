@@ -16,8 +16,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import eas.api_github_android.R
 import eas.api_github_android.presentation.ui.components.RepositoryItem
-import eas.api_github_android.presentation.ui.screens.RepositoriesScreenMock
-import eas.api_github_android.presentation.ui.screens.RepositoryDetailScreen
 import eas.api_github_android.presentation.ui.viewmodel.RepositoriesViewModel
 
 @Composable
