@@ -24,6 +24,8 @@ import coil.request.ImageRequest
 import eas.api_github_android.R
 import eas.api_github_android.data.model.repositories.common.ItemsItem
 import eas.api_github_android.presentation.ui.navigation.Destinations
+import okio.ByteString.Companion.encodeUtf8
+import java.net.URLEncoder
 
 @Composable
 fun RepositoryItem(
@@ -40,7 +42,8 @@ fun RepositoryItem(
             .fillMaxWidth()
             .padding(16.dp)
             .clickable {
-                navController?.navigate("${Destinations.REPOSITORY_DETAIL_SCREEN}/$repositoryName/$repositoryDescription/$username/$forkCount/$starCount/$avatarResId")
+                val urlEncoded = URLEncoder.encode(avatarResId, "UTF-8")
+                navController?.navigate("${Destinations.REPOSITORY_DETAIL_SCREEN}/$repositoryName/$repositoryDescription/$username/$forkCount/$starCount/$urlEncoded")
             }
     ) {
         // Avatar Image
