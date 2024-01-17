@@ -76,5 +76,5 @@ data class ItemsItem(
     val watchersCount: Int? = null,
     val nodeId: String? = null,
     val homepage: String? = null,
-    val forks_count: Int? = null
+    val forks_count: Int? = null,
 )

@@ -12,11 +12,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import eas.api_github_android.R
 import eas.api_github_android.data.model.repositories.common.ItemsItem
 import eas.api_github_android.presentation.ui.navigation.Destinations
@@ -28,7 +32,7 @@ fun RepositoryItem(
     username: String,
     forkCount: Int,
     starCount: Int,
-    avatarResId: Int,
+    avatarResId: String,
     navController: NavController? = null
 ) {
     Row(
@@ -36,7 +40,7 @@ fun RepositoryItem(
             .fillMaxWidth()
             .padding(16.dp)
             .clickable {
-                navController?.navigate("${Destinations.REPOSITORY_DETAIL_SCREEN}/$repositoryName/$repositoryDescription/$username/$forkCount/$starCount")
+                navController?.navigate("${Destinations.REPOSITORY_DETAIL_SCREEN}/$repositoryName/$repositoryDescription/$username/$forkCount/$starCount/$avatarResId")
             }
     ) {
         // Avatar Image
@@ -46,10 +50,14 @@ fun RepositoryItem(
                 .clip(CircleShape)
                 .background(Color.Gray)
         ) {
-            // Replace painterResource with your actual image resource
-            Image(
-                painter = painterResource(avatarResId),
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(avatarResId)
+                    .crossfade(true)
+                    .build(),
+                placeholder = painterResource(R.drawable.ic_person),
                 contentDescription = null,
+                contentScale = ContentScale.FillHeight,
                 modifier = Modifier.fillMaxSize()
             )
         }
@@ -127,6 +135,6 @@ fun PreviewItemRepository() {
         username = "john_doe",
         forkCount = 100,
         starCount = 50,
-        avatarResId = R.drawable.ic_person // Replace with your actual avatar resource ID
+        avatarResId = "" // Replace with your actual avatar resource ID
     )
 }

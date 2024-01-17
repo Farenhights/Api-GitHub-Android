@@ -33,7 +33,8 @@ fun RepositoryDetailScreen(
     repositoryDescription: String?,
     username: String?,
     forkCount: Int?,
-    starCount: Int?
+    starCount: Int?,
+    avatarResId: String?
 ) {
     Column(
         modifier = Modifier
@@ -48,7 +49,7 @@ fun RepositoryDetailScreen(
 
         AsyncImage(
             model = ImageRequest.Builder(LocalContext.current)
-                .data("https://avatars.githubusercontent.com/u/6764390?v=4")
+                .data(avatarResId)
                 .crossfade(true)
                 .build(),
             placeholder = painterResource(R.drawable.ic_person),
@@ -70,6 +71,6 @@ fun RepositoryDetailScreenPreview() {
     RepositoryDetailScreen(
         LoremIpsum().values.first().take(10), LoremIpsum().values.first().take(32),
         LoremIpsum().values.first().take(10),
-        1200, 550
+        1200, 550, ""
     )
 }

@@ -22,8 +22,9 @@ fun NavGraph(startDestination: String = Destinations.REPOSITORIES_SCREEN) {
             val userName = backStackEntry.arguments?.getString("userName")
             val forkCount = backStackEntry.arguments?.getInt("forkCount")
             val starCount = backStackEntry.arguments?.getInt("starCount")
+            val avatarResId = backStackEntry.arguments?.getString("avatarResId")
 
-            RepositoryDetailScreen(repositoryName, repositoryDescription, userName, forkCount, starCount)
+            RepositoryDetailScreen(repositoryName, repositoryDescription, userName, forkCount, starCount, avatarResId)
         }
     }
 }

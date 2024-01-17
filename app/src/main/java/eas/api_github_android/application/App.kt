@@ -22,13 +22,14 @@ fun App() {
                 RepositoriesScreen(navController)
             }
             composable(
-                route = "repositoryDetailScreen/{repositoryName}/{repositoryDescription}/{username}/{forkCount}/{starCount}",
+                route = "repositoryDetailScreen/{repositoryName}/{repositoryDescription}/{username}/{forkCount}/{starCount}/{avatarResId}",
                 arguments = listOf(
                     navArgument("repositoryName") { type = NavType.StringType },
                     navArgument("repositoryDescription") { type = NavType.StringType },
                     navArgument("username") { type = NavType.StringType },
                     navArgument("forkCount") { type = NavType.IntType },
-                    navArgument("starCount") { type = NavType.IntType }
+                    navArgument("starCount") { type = NavType.IntType },
+                    navArgument("avatarResId") { type = NavType.StringType }
                 )
             ) { backStackEntry ->
                 val repositoryName = backStackEntry.arguments?.getString("repositoryName") ?: ""
@@ -36,13 +37,15 @@ fun App() {
                 val username = backStackEntry.arguments?.getString("username") ?: ""
                 val forkCount = backStackEntry.arguments?.getInt("forkCount") ?: 0
                 val starCount = backStackEntry.arguments?.getInt("starCount") ?: 0
+                val avatarResId = backStackEntry.arguments?.getString("avatarResId") ?: ""
 
                 RepositoryDetailScreen(
                     repositoryName = repositoryName,
                     repositoryDescription = repositoryDescription,
                     username = username,
                     forkCount = forkCount,
-                    starCount = starCount
+                    starCount = starCount,
+                    avatarResId = avatarResId
                 )
             }
         }

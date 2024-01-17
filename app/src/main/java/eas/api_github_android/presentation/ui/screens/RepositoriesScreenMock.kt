@@ -44,7 +44,7 @@ fun RepositoriesScreenMock() {
                     username = repository.owner?.login ?: "",
                     forkCount = repository.forks_count ?: 0,
                     starCount = repository.stargazers_count ?: 0,
-                    avatarResId = R.drawable.ic_person
+                    avatarResId = ""
                 )
             }
         }

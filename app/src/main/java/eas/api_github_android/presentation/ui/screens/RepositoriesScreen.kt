@@ -55,7 +55,7 @@ fun RepositoriesScreen(navController: NavController, viewModel: RepositoriesView
                             username = repository.owner?.login ?: "",
                             forkCount = repository.forks_count ?: 0,
                             starCount = repository.stargazers_count ?: 0,
-                            avatarResId = R.drawable.ic_person,
+                            avatarResId = repository.owner?.avatar_url ?: "",
                             navController = navController
                         )
                     }
