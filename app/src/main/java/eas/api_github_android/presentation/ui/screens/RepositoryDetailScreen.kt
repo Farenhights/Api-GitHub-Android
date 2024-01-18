@@ -26,7 +26,6 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import eas.api_github_android.R
 import eas.api_github_android.presentation.ui.viewmodel.RepositoryDetailViewModel
-
 @Composable
 fun RepositoryDetailScreen(
     repositoryName: String?,
