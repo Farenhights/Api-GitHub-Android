@@ -10,11 +10,11 @@ The idea is consult [API from GitHub](https://developer.github.com/v3/) and get 
 
 - __MVVM Architecture + Clean__. 
 - __Kotlin__. 
-- __Koin__.
+- __Hilt__.
 - __Coroutines__. 
 - __Android Navigation__. 
 - __Android Compose__.
-- __Live Data__. 
+- __View State__. 
 - __Retrofit 2__.
 - __Gson__.
 - __Lottie__. 
