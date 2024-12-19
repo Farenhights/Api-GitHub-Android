@@ -1,4 +1,4 @@
-# App for consult the API from GitHub
+# App for consult the API from GitHub using Android Jetpack Compose
 
 This app was created to study the best practices of technologies for Android.
 
